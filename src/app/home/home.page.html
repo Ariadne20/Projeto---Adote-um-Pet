@@ -1,20 +1,90 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Blank
+      <strong>Página Inicial</strong>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  
+    <ion-row style="background-color: #f9c214;">
+        <ion-col  size="4.8" class="ion-align-self-center">
+          <h1 style="font-weight: bold;text-align: center;">ADOTE UM</h1>
+          <h1 style="color: #4ca8f1; font-weight: bold; text-align: center;">PET</h1>
+        </ion-col>
+        <ion-col class="ion-align-self-center">
+          <img src="https://estimacaopetschool.com.br/painelpet/wp-content/uploads/2017/09/line-pets.png" alt="">
+        </ion-col>
+    </ion-row>
+  
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <h4 class="margin">Está em busca de um companheiro? Veio ao lugar certo, temos pets cheios de amor para dar!</h4>
+ 
+  <ion-grid >
+    <ion-row>
+      <ion-col size="6" class="my-col">
+        <ion-item class="my-col">
+          <ion-button (click)="onClick()" class="button-button">
+              Adotar
+              <ion-icon name="add-circle-outline" color="white" class="button-icon" slot="start" ></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6" class="my-col">
+        <ion-item class="my-col">
+          <ion-button (click)="onClick()" class="button-button">
+            Quem somos
+            <ion-icon name="people-outline" slot="start"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <p style="margin: 10pt; font-weight: bold;color: white;"><strong>Veja um dos nossos Pets disponíveis para adoção:</strong></p>
+  
+    <ion-card class="ion-activatable ripple-parent" style="border-width: 2pt; border-color: black;">
+      <ion-card-header>
+        <ion-card-subtitle>
+          pet.Nome | Macho
+        </ion-card-subtitle>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="3" class="ion-justify-content-start">
+            <ion-avatar>
+              <img src="https://images.pexels.com/photos/2253275/pexels-photo-2253275.jpeg?cs=srgb&dl=pexels-helena-lopes-2253275.jpg&fm=jpg"/>
+            </ion-avatar>
+          </ion-col>
+          <ion-col size="9">  
+            <ion-card-content>
+              <ion-text>
+                Romeu é um doguinho super carinhoso e bonzinho, ama caminhar e brincar.
+              </ion-text>
+            </ion-card-content>
+          </ion-col>
+        </ion-row>
+        <ion-button (click)="onClick()" fill="clear" class="ion-no-padding">
+          <ion-icon name="arrow-forward-outline" slot="end" color="white"></ion-icon>
+          Saiba mais
+        </ion-button>
+      </ion-card-header>
+    </ion-card>
+
+    <h6 style="margin: 10pt; font-weight: bold; color: white; ">Veja os feedbacks de alguns dos nossos usuários:</h6>
+    
+      <ion-row class="feedback">
+        <ion-col size="4" class="verticalhorizontal">
+          <div>
+            <img src="https://images.pexels.com/photos/428321/pexels-photo-428321.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+          </div>
+          </ion-col>
+        <ion-col style="align-items: center;vertical-align: middle;">
+          <ion-text style="font-size: 10pt;">
+            "Estava me sentindo muito só, com Adote um Pet encontrei Amêndoa, a gatinha mais carinhosa que já vi"
+          </ion-text>
+          <div style="background-color: #4ca8f1; text-align: center;">
+            <p class= "Adjust">Mônica Pereira - RJ </p>
+          </div>
+        </ion-col>
+      </ion-row>
 </ion-content>
