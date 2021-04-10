@@ -43,22 +43,24 @@
   </ion-grid>
 
   <p style="margin: 10pt; font-weight: bold;color: white;"><strong>Veja um dos nossos Pets disponíveis para adoção:</strong></p>
-  
+
+  <!--A ideia é mostrar apenas os dois primeiros elementos da lista-->
+  <ion-list style="padding: 0pt; margin:0pt; background-color: #4ca8f1;" *ngFor= "let pet of pets">
     <ion-card class="ion-activatable ripple-parent" style="border-width: 2pt; border-color: black;">
       <ion-card-header>
         <ion-card-subtitle>
-          pet.Nome | Macho
+          {{pet.Nome}} | {{pet.Genero}}
         </ion-card-subtitle>
         <ion-row class="ion-align-items-center">
           <ion-col size="3" class="ion-justify-content-start">
             <ion-avatar>
-              <img src="https://images.pexels.com/photos/2253275/pexels-photo-2253275.jpeg?cs=srgb&dl=pexels-helena-lopes-2253275.jpg&fm=jpg"/>
+              <img src="{{pet.Foto}}"/>
             </ion-avatar>
           </ion-col>
           <ion-col size="9">  
             <ion-card-content>
               <ion-text>
-                Romeu é um doguinho super carinhoso e bonzinho, ama caminhar e brincar.
+                {{pet.Descricao}}
               </ion-text>
             </ion-card-content>
           </ion-col>
@@ -69,22 +71,26 @@
         </ion-button>
       </ion-card-header>
     </ion-card>
+  </ion-list>
 
     <h6 style="margin: 10pt; font-weight: bold; color: white; ">Veja os feedbacks de alguns dos nossos usuários:</h6>
     
+    <!--A ideia é mostrar apenas 1 feedback da lista-->
+    <ion-list style="padding: 0pt; margin:0pt; background-color: #4ca8f1;" *ngFor= "let feedback of feedbacks">
       <ion-row class="feedback">
         <ion-col size="4" class="verticalhorizontal">
           <div>
-            <img src="https://images.pexels.com/photos/428321/pexels-photo-428321.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+            <img src="{{feedback.Foto}}">
           </div>
           </ion-col>
         <ion-col style="align-items: center;vertical-align: middle;">
           <ion-text style="font-size: 10pt;">
-            "Estava me sentindo muito só, com Adote um Pet encontrei Amêndoa, a gatinha mais carinhosa que já vi"
+            {{feedback.Feedback}}
           </ion-text>
           <div style="background-color: #4ca8f1; text-align: center;">
-            <p class= "Adjust">Mônica Pereira - RJ </p>
+            <p class= "Adjust">{{feedback.Nome}} - {{feedback.Estado}}</p>
           </div>
         </ion-col>
       </ion-row>
+    </ion-list>
 </ion-content>
