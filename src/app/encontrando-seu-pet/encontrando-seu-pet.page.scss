@@ -1,0 +1,110 @@
+ion-card {
+    background-color: #f9c214;
+    border: 1px solid black;
+    border-radius: 0%;
+  }
+  
+  ion-card-subtitle{
+    background-color: #4ca8f1; 
+    color: white; 
+    border: 0.5px solid black;
+    font-weight: bold;
+    font-size: 12pt;
+    margin-right: 4px;
+    text-indent: 5pt;
+    //Lembrar de como dar um espaçamento 
+  }
+  
+  ion-card-content{
+    color: black;
+    font-size: small;
+  }
+  
+  ion-avatar{
+    border-radius: 0%;
+    object-fit:fill;
+  }
+  
+  .p{
+    color: black;
+  }
+  
+  ion-button{
+    color: black;
+    font-size: 9pt;
+    margin: 0px;
+    border-radius: 0%;
+  }
+  
+  ion-card button{
+    color: white;
+  }
+  
+  .aligntext{
+    text-align: center;
+  }
+  
+  .makeBold{
+    font-weight: bold;
+  }
+  
+  
+  
+  .Adjust{
+    text-align: center;
+    color: white;
+    font-size: 10pt; 
+    font-weight: bold;
+  }
+  
+  .feedback{
+    margin: 10px;
+    background-color: #f9c214; 
+    border-style: dashed;
+    border-width: 0.5pt;
+    vertical-align: middle;
+  }
+  
+  .feedback-col{
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .margin{
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .button-icon{
+    color:black;
+    align-items: start;
+    text-indent: 3px;
+    vertical-align: middle;
+  }
+  
+  .button-button{
+    margin: 0px;
+    background-color: #4ca8f1;
+    align-items: center;
+    vertical-align: middle;
+    width: 140px;
+    color: white;
+    justify-content: center;
+  }
+  
+  .teste{
+    background-color: #f9c214;
+  }
+  
+  .buttonBuscar{
+    
+    color: white;
+  }
+   ion-content{
+    --background: #4ca8f1;
+   }
+  
+   ion-list{
+    background-color:  #4ca8f1;
+  
+   }

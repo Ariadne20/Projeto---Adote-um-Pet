@@ -1,0 +1,148 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <strong>Encontrando seu Pet</strong>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class= "ion-padding">
+  <ion-row style="background-color: #f9c214;">
+    <ion-col  size="4.8" class="ion-align-self-center">
+      <h1 style="font-weight: bold;text-align: center;">ADOTE UM</h1>
+      <h1 style="color: #4ca8f1; font-weight: bold; text-align: center;">PET</h1>
+    </ion-col>
+    <ion-col class="ion-align-self-center">
+      <img src="https://estimacaopetschool.com.br/painelpet/wp-content/uploads/2017/09/line-pets.png" alt="">
+    </ion-col>
+  </ion-row>
+
+    <ion-item style="padding: 0%; margin: 0%; ">
+      <ion-label position="floating" style="margin: 0%; font-size: 12pt; font-weight: bold;">Escolha o tipo de Pet:</ion-label>
+      <ion-select [(ngModel)]="inputType" (ionChange)="FiltroPet()">
+      <ion-select-option value="Cachorro">Cachorro</ion-select-option>
+      <ion-select-option value="Gato">Gato</ion-select-option>
+      <ion-select-option value="Tudo">Tudo</ion-select-option>
+
+      </ion-select>
+      </ion-item>
+
+    <ion-list style="padding: 0pt; margin: 0pt;" *ngIf="inputType=='Gato'; else cachorro">
+      <ion-card class="ion-activatable ripple-parent" style="border-width: 2pt; border-color: black; padding: 0%; margin-left: 0pt; margin-right: 0pt;" *ngFor = "let pet of listaGatos">
+        <ion-card-header>
+          <ion-card-subtitle>
+            {{pet.Nome}} | {{pet.Genero}} 
+          </ion-card-subtitle>
+          <ion-row class="ion-align-items-center">
+            <ion-col size="3" class="ion-justify-content-start">
+              <ion-avatar>
+                <img src="{{pet.Foto}}"/>
+              </ion-avatar>
+            </ion-col>
+            <ion-col size="9">  
+              <ion-card-content>
+                <ion-text>
+                  {{pet.Descricao}}
+                </ion-text>
+              </ion-card-content>
+            </ion-col>
+          </ion-row>
+          <ion-button (click)="onClick()" fill="clear" class="ion-no-padding">
+            <ion-icon name="arrow-forward-outline" slot="end" color="white"></ion-icon>
+              Saiba mais
+          </ion-button>
+        </ion-card-header>
+      </ion-card>
+    </ion-list>
+
+      <ng-template #cachorro>
+        <ion-list *ngIf="inputType=='Cachorro'; else tudo">
+          <ion-card class="ion-activatable ripple-parent" style="border-width: 2pt; border-color: black; margin-left: 0pt; margin-right: 0pt;" *ngFor = "let pet of listaCachorros">
+            <ion-card-header>
+              <ion-card-subtitle>
+                {{pet.Nome}} | {{pet.Genero}} 
+              </ion-card-subtitle>
+              <ion-row class="ion-align-items-center">
+                <ion-col size="3" class="ion-justify-content-start">
+                  <ion-avatar>
+                    <img src="{{pet.Foto}}"/>
+                  </ion-avatar>
+                </ion-col>
+                <ion-col size="9">  
+                  <ion-card-content>
+                    <ion-text>
+                      {{pet.Descricao}}
+                    </ion-text>
+                  </ion-card-content>
+                </ion-col>
+              </ion-row>
+              <ion-button (click)="onClick()" fill="clear" class="ion-no-padding">
+                <ion-icon name="arrow-forward-outline" slot="end" color="white"></ion-icon>
+                Saiba mais
+              </ion-button>
+            </ion-card-header>
+          </ion-card>
+        </ion-list>
+      </ng-template>
+
+      <ng-template #tudo>
+        <ion-list style="padding: 0pt; margin: 0pt;" *ngIf="inputType=='Tudo'||'null'">
+          <ion-card class="ion-activatable ripple-parent" style="border-width: 2pt; border-color: black; padding: 0pt; margin-left: 0pt; margin-right: 0pt;" *ngFor = "let pet of pets">
+            <ion-card-header>
+              <ion-card-subtitle>
+                {{pet.Nome}} | {{pet.Genero}} 
+              </ion-card-subtitle>
+              <ion-row class="ion-align-items-center">
+                <ion-col size="3" class="ion-justify-content-start">
+                  <ion-avatar>
+                    <img src="{{pet.Foto}}"/>
+                  </ion-avatar>
+                </ion-col>
+                <ion-col size="9">  
+                  <ion-card-content>
+                    <ion-text>
+                      {{pet.Descricao}}
+                    </ion-text>
+                  </ion-card-content>
+                </ion-col>
+              </ion-row>
+              <ion-button (click)="onClick()" fill="clear" class="ion-no-padding">
+                <ion-icon name="arrow-forward-outline" slot="end" color="white"></ion-icon>
+                Saiba mais
+              </ion-button>
+            </ion-card-header>
+          </ion-card>
+        </ion-list>
+      </ng-template>
+      
+    <!--
+    <ion-list *ngFor="let pet of petFiltrados" (ionChange)="FiltroPet()">
+      <ion-card class="ion-activatable ripple-parent" style="border-width: 2pt; border-color: black;">
+        <ion-card-header>
+          <ion-card-subtitle>
+            {{pet.Nome}} | {{pet.Genero}} 
+          </ion-card-subtitle>
+          <ion-row class="ion-align-items-center">
+            <ion-col size="3" class="ion-justify-content-start">
+              <ion-avatar>
+                <img src="{{pet.Foto}}"/>
+              </ion-avatar>
+            </ion-col>
+            <ion-col size="9">  
+              <ion-card-content>
+                <ion-text>
+                  {{pet.Descricao}}
+                </ion-text>
+              </ion-card-content>
+            </ion-col>
+          </ion-row>
+          <ion-button (click)="onClick()" fill="clear" class="ion-no-padding">
+            <ion-icon name="arrow-forward-outline" slot="end" color="white"></ion-icon>
+            Saiba mais
+          </ion-button>
+        </ion-card-header>
+      </ion-card>
+    </ion-list>   
+    -->
+
+</ion-content>
