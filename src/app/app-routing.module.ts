@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'olhando-seu-pet',
     loadChildren: () => import('./olhando-seu-pet/olhando-seu-pet.module').then( m => m.OlhandoSeuPetPageModule)
   },
+  {
+    path: 'adotando-um-pet',
+    loadChildren: () => import('./adotando-um-pet/adotando-um-pet.module').then( m => m.AdotandoUmPetPageModule)
+  },
 ];
 
 @NgModule({
