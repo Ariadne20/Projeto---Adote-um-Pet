@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'quem-somos',
+    loadChildren: () => import('./quem-somos/quem-somos.module').then( m => m.QuemSomosPageModule)
+  },
 ];
 
 @NgModule({
