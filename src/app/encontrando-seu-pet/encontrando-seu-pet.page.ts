@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-type TipoPet = 'Gato'|'Cachorro'| '';
+type TipoPet = 'Gato'|'Cachorro'| '' | 'Tudo';
 type Genero = 'Fêmea' | 'Macho';
 
 interface Pet{
@@ -91,13 +91,14 @@ export class EncontrandoSeuPetPage implements OnInit {
   public listaCachorros: Pet[] = this.pets.filter(pet=> pet.Tipo=='Cachorro');
 
   public FiltroPet(){
-    let petFiltrado: Pet[];
-    if(this.inputType==''||'Tudo'){
-      petFiltrado = this.pets;
+    console.log('Olá')
+    if(this.inputType==''||this.inputType=='Tudo'){
+      this.petFiltrados = this.pets;
     }else if(this.inputType=='Cachorro'){
-      petFiltrado=this.listaCachorros;
+      this.petFiltrados=this.listaCachorros;
+      console.log(this.listaCachorros)
     }else{
-      petFiltrado=this.listaGatos;
+      this.petFiltrados=this.listaGatos;
     }
   }
 }
