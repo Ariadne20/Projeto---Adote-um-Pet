@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { EncontrandoSeuPetPageRoutingModule } from './encontrando-seu-pet-routing.module';
 
 import { EncontrandoSeuPetPage } from './encontrando-seu-pet.page';
+import { Routes } from '@angular/router';
+import { OlhandoSeuPetPage } from '../olhando-seu-pet/olhando-seu-pet.page';
+
 
 @NgModule({
   imports: [

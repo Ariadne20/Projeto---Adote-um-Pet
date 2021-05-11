@@ -16,45 +16,5 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-
-  <ion-row style="background-color: #f9c214; margin-bottom: 10pt;" >
-    <ion-col  size="4.8" class="ion-align-self-center">
-      <h1 style="font-weight: bold;text-align: center;">ADOTE UM</h1>
-      <h1 style="color: #4ca8f1; font-weight: bold; text-align: center;">PET</h1>
-    </ion-col>
-    <ion-col class="ion-align-self-center">
-      <img src="https://estimacaopetschool.com.br/painelpet/wp-content/uploads/2017/09/line-pets.png" alt="">
-    </ion-col>
-  </ion-row>
-
-  <ion-grid style="background-color: #f9c214; padding-top: 15pt;">
-    <ion-row style="background-color: #4ca8f1; align-self: start; vertical-align: middle;align-items: center; align-content: center;border-color: black;">
-      <ion-text style="color: white; text-indent: 10pt; font-weight: bold; font-size: 24pt;">
-        Jujuba | Fêmea
-      </ion-text>
-    </ion-row>
-    <ion-row style="padding-top: 15pt; padding-bottom: 0pt;">
-      <ion-col size="6">
-        <img style="vertical-align: middle; image-resolution: 100%;" src="https://images.pexels.com/photos/2071882/pexels-photo-2071882.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-      </ion-col>
-      <ion-col size="6">
-        <p><strong>Cor:</strong> Preto e branco</p>
-        <p><strong>Pelagem:</strong> Curta</p>
-        <p><strong>Olhos:</strong> Verdes</p>
-        <p><strong>Idade aproximada:</strong> 4 meses</p>
-        <p><strong>Estado:</strong> SP</p>
-        <p><strong>Cidade:</strong> Mauá</p>
-      </ion-col>
-    </ion-row>
-  
-    <ion-row style="margin-top: 0%; padding-top: 0%;">
-      <p style="color: black; text-indent: 10pt; font-size: 14pt; padding: 2pt; justify-content: center; text-indent: 0pt; align-content: center; text-align:left; margin-top: 0pt;">
-        Jujuba passou por muitas dificuldades e está em busca de um lar amoroso para recomeçar.
-      </p>
-    </ion-row>
-    <ion-button (click)="onClick()" expand="block" shape="square" style="font-size: 12pt;">
-      <ion-icon slot="start" name="add-circle-outline"></ion-icon>
-      Quero Adotar!
-    </ion-button>
-  </ion-grid>
+  <app-pets [id]="id"></app-pets>
 </ion-content>

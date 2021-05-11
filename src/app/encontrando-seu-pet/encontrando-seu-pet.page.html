@@ -55,10 +55,19 @@
               </ion-card-content>
             </ion-col>
           </ion-row>
-          <ion-button (click)="onClick()" fill="clear" class="ion-no-padding">
-            <ion-icon name="arrow-forward-outline" slot="end" color="white"></ion-icon>
-            Saiba mais
-          </ion-button>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button [routerLink]="['/olhando-seu-pet', pet.id]" fill="clear" class="ion-no-padding">
+                <ion-icon name="arrow-forward-outline" slot="end" color="white"></ion-icon>
+                Saiba mais
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button (click)="onClick()" fill="clear">
+                <ion-icon slot="end" name="add"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
         </ion-card-header>
       </ion-card>
     </ion-list>   

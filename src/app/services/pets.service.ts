@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { Injectable } from '@angular/core';
 
 type TipoPet = 'Gato'|'Cachorro'| '' | 'Tudo';
 type Genero = 'Fêmea' | 'Macho';
 
-interface Pet{
+export interface Pet{
   id: number;
   Nome: string;
   Tipo:TipoPet;
@@ -20,25 +19,23 @@ interface Pet{
   Descricao:String,
 }
 
-
-@Component({
-  selector: 'app-adotando-um-pet',
-  templateUrl: './adotando-um-pet.page.html',
-  styleUrls: ['./adotando-um-pet.page.scss'],
+@Injectable({
+  providedIn: 'root'
 })
-export class AdotandoUmPetPage implements OnInit {
-  public id:number;
-  public filtroRotaDinamica: Pet[];
-   
-  constructor(private route: ActivatedRoute) {
-    this.id =+ route.snapshot.paramMap.get('id');
-    this.filtroRotaDinamica = this.pets.filter(pet=>pet.id==this.id);  
+export class PetsService{
+
+  constructor(private storage:Storage) {
+    this.loadFromStorage();
+  }
+
+  private async loadFromStorage(){
+    const pets = await this.storage.get('pets') as Pet[];
+    if (pets){
+      this.petsFavoritos.push(...pets);
+    }
   }
   
-  ngOnInit() {
-  }
-
-  public pets: Pet[]=[
+  public todosOsPets: Pet[]=[
     {
       id:1,
       Nome:'Romeu',
@@ -46,7 +43,7 @@ export class AdotandoUmPetPage implements OnInit {
       Genero: 'Macho',
       Idade:'4 meses',
       CorDoPelo:'Caramelo',
-      Pelagem: 'Curta',
+      Pelagem:'Curta',
       CorDosOlhos:'Castanho',
       Estado:'SP',
       Cidade:'Mauá',
@@ -61,8 +58,8 @@ export class AdotandoUmPetPage implements OnInit {
       Genero: 'Fêmea',
       Idade:'1 ano',
       CorDoPelo:'Cinza',
+      Pelagem:'Curta',
       CorDosOlhos:'Azul',
-      Pelagem: 'Longa',
       Estado:'PE',
       Cidade:'Olinda',
       Vacinado:false,
@@ -76,7 +73,7 @@ export class AdotandoUmPetPage implements OnInit {
       Genero:'Fêmea',
       Idade:'2 anos',
       CorDoPelo:'Marrom',
-      Pelagem: 'Curta',
+      Pelagem:'Curta',
       CorDosOlhos:'Castanho',
       Estado:'SP',
       Cidade:'Pirituba',
@@ -92,7 +89,7 @@ export class AdotandoUmPetPage implements OnInit {
       Genero: 'Macho',
       Idade:'4 anos',
       CorDoPelo:'Dourado',
-      Pelagem: 'Longa',
+      Pelagem:'Curta',
       CorDosOlhos:'Mel',
       Estado:'MG',
       Cidade:'Ouro Preto',
@@ -100,10 +97,35 @@ export class AdotandoUmPetPage implements OnInit {
       Foto:'https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       Descricao:'Romeu é um doguinho super carinhoso e bonzinho, ama caminhar e brincar.',
     }
-  ]
+  ];
 
   public inputType:TipoPet;
-  public petFiltrados: Pet[] = this.pets;
-  public listaGatos: Pet[] = this.pets.filter(pet=> pet.Tipo=='Gato');
-  public listaCachorros: Pet[] = this.pets.filter(pet=> pet.Tipo=='Cachorro');
+  public petFiltrados: Pet[] = this.todosOsPets;
+  public listaGatos: Pet[] = this.todosOsPets.filter(pet=> pet.Tipo=='Gato');
+  public listaCachorros: Pet[] = this.todosOsPets.filter(pet=> pet.Tipo=='Cachorro');
+
+  public petsFavoritos: Pet[]=[];
+
+  public FiltroPet(){
+    if(this.inputType==''||this.inputType=='Tudo'){
+      this.petFiltrados = this.todosOsPets;
+    }else if(this.inputType=='Cachorro'){
+      this.petFiltrados=this.listaCachorros;
+      console.log(this.listaCachorros)
+    }else{
+      this.petFiltrados=this.listaGatos;
+    }
+  }
+  
+
+
+  public addPet(newPet: Pet){
+    this.petsFavoritos.push(newPet);
+    this.storage.set('pets', this.petsFavoritos);
+  }
+
+  public removePet(){
+    this.petsFavoritos.pop();
+    this.storage.set('pets', this.petsFavoritos);
+  }
 }

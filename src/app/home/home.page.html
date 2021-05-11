@@ -7,6 +7,11 @@
 </ion-header>
 
 <ion-content class="ion-padding">
+  <app-pets *ngFor="let pets of pet">
+    <<ion-text color="primary">
+      <h1>{{pet.Nome}}</h1>
+    </ion-text>
+  </app-pets>
   
     <ion-row style="background-color: #f9c214;">
         <ion-col  size="4.8" class="ion-align-self-center">
@@ -45,7 +50,7 @@
   <p style="margin: 10pt; font-weight: bold;color: white;"><strong>Veja um dos nossos Pets disponíveis para adoção:</strong></p>
 
   <!--A ideia é mostrar apenas os dois primeiros elementos da lista-->
-  <ion-list style="padding: 0pt; margin:0pt; background-color: #4ca8f1;" *ngFor= "let pet of pets">
+  <ion-list style="padding: 0pt; margin:0pt; background-color: #4ca8f1;" *ngFor= "let pet of pets | slice: 0:1">
     <ion-card class="ion-activatable ripple-parent" style="border-width: 2pt; border-color: black;">
       <ion-card-header>
         <ion-card-subtitle>
@@ -65,7 +70,7 @@
             </ion-card-content>
           </ion-col>
         </ion-row>
-        <ion-button (click)="onClick()" fill="clear" class="ion-no-padding">
+        <ion-button [routerLink]="['/olhando-seu-pet', pet.id]" fill="clear" class="ion-no-padding">
           <ion-icon name="arrow-forward-outline" slot="end" color="white"></ion-icon>
           Saiba mais
         </ion-button>

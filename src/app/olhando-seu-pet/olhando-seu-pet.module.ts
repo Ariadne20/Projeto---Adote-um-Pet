@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { OlhandoSeuPetPageRoutingModule } from './olhando-seu-pet-routing.module';
 
 import { OlhandoSeuPetPage } from './olhando-seu-pet.page';
+import { PetsComponent } from '../pets/pets.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { OlhandoSeuPetPage } from './olhando-seu-pet.page';
     IonicModule,
     OlhandoSeuPetPageRoutingModule
   ],
-  declarations: [OlhandoSeuPetPage]
+  declarations: [OlhandoSeuPetPage,PetsComponent]
 })
 export class OlhandoSeuPetPageModule {}

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 type TipoPet = 'Gato'|'Cachorro'| '' | 'Tudo';
 type Genero = 'Fêmea' | 'Macho';
 
 interface Pet{
+  id: number;
   Nome: string;
   Tipo:TipoPet;
   Genero:Genero;
@@ -24,13 +26,15 @@ interface Pet{
 })
 export class EncontrandoSeuPetPage implements OnInit {
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit() {
   }
 
   public pets: Pet[]=[
     {
+      id:1,
       Nome:'Romeu',
       Tipo:'Cachorro',
       Genero: 'Macho',
@@ -44,6 +48,7 @@ export class EncontrandoSeuPetPage implements OnInit {
       Descricao:'Romeu é um doguinho super carinhoso e bonzinho, ama caminhar e brincar.',
     },
     {
+      id: 2,
       Nome:'Jujuba',
       Tipo:'Gato',
       Genero: 'Fêmea',
@@ -57,6 +62,7 @@ export class EncontrandoSeuPetPage implements OnInit {
       Descricao:'Jujuba passou por muitas dificuldades e está em busca de um lar amoroso para recomeçar.',
     },
     {
+      id: 3,
       Nome:'Ana Clara',
       Tipo:'Cachorro',
       Genero:'Fêmea',
@@ -71,6 +77,7 @@ export class EncontrandoSeuPetPage implements OnInit {
 
     },
     {
+      id: 42,
       Nome:'Didi',
       Tipo:'Gato',
       Genero: 'Macho',
@@ -91,7 +98,6 @@ export class EncontrandoSeuPetPage implements OnInit {
   public listaCachorros: Pet[] = this.pets.filter(pet=> pet.Tipo=='Cachorro');
 
   public FiltroPet(){
-    console.log('Olá')
     if(this.inputType==''||this.inputType=='Tudo'){
       this.petFiltrados = this.pets;
     }else if(this.inputType=='Cachorro'){

@@ -11,6 +11,7 @@ interface Feedback{
 }
 
 interface Pet{
+  id: Number;
   Nome: string;
   Tipo:TipoPet;
   Genero:Genero;
@@ -35,6 +36,7 @@ export class HomePage {
 
   public pets: Pet[]=[
     {
+      id: 1,
       Nome:'Romeu',
       Tipo:'Cachorro',
       Genero: 'Macho',
@@ -48,6 +50,7 @@ export class HomePage {
       Descricao:'Romeu é um doguinho super carinhoso e bonzinho, ama caminhar e brincar.',
     },
     {
+      id: 2,
       Nome:'Jujuba',
       Tipo:'Gato',
       Genero: 'Fêmea',
@@ -61,6 +64,7 @@ export class HomePage {
       Descricao:'Romeu é um doguinho super carinhoso e bonzinho, ama caminhar e brincar.',
     },
     {
+      id:3,
       Nome:'Ana Clara',
       Tipo:'Cachorro',
       Genero:'Fêmea',
@@ -75,6 +79,7 @@ export class HomePage {
     },
 
     {
+      id:42,
       Nome:'Didi',
       Tipo:'Gato',
       Genero: 'Macho',

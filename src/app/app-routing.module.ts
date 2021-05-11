@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'adotando-um-pet',
     loadChildren: () => import('./adotando-um-pet/adotando-um-pet.module').then( m => m.AdotandoUmPetPageModule)
   },
+  {
+    path: 'pets-favoritos',
+    loadChildren: () => import('./pets-favoritos/pets-favoritos.module').then( m => m.PetsFavoritosPageModule)
+  },
 ];
 
 @NgModule({
