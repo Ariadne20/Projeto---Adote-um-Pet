@@ -15,6 +15,6 @@ import { PetsComponent } from '../pets/pets.component';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, PetsComponent]
+  declarations: [HomePage]
 })
 export class HomePageModule {}
