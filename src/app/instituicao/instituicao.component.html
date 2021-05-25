@@ -30,9 +30,11 @@
         Pet Helper
         <ion-icon name="heart"></ion-icon>
       </p>
-      <p style="padding-top: 10pt; padding-bottom: 10pt;"><strong>{{}}</strong></p>
-      <p style="padding-top: 0pt; padding-bottom: 10pt;"><strong>Estado:</strong>{{}}</p>
-      <p style="padding-top: 0pt; padding-bottom: 10pt;"><strong>Descrição:</strong>{{}}</p>
+      <p style="padding-top: 10pt; padding-bottom: 10pt;"><strong>Nome:{{pet.Nome}}</strong></p>
+      <p style="padding-top: 0pt; padding-bottom: 10pt;"><strong>Estado:{{pet.nome}}</strong></p>
+      <p style="padding-top: 0pt; padding-bottom: 10pt;"><strong>Descrição:{{pet.nome}}</strong></p>
+    {{pet | json}}
+    
     </ion-col>
   </ion-row>
   <ion-button (click)="onClick()" expand="block" shape="square" style="font-size: 12pt;">

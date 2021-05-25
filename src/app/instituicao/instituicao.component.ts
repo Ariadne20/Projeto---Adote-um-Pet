@@ -33,14 +33,15 @@ interface Pet{
 export class InstituicaoComponent implements OnInit {
   @Input() public id:number;
   public filtroRotaDinamica: Pet[];
+  public pet:Pet;
    
   constructor(private storage:Storage) {
 
   }
   
-  async ngOnInit() {
-    await this.storage.create();
-    this.filtroRotaDinamica = this.pets.filter(pet=>pet.id==this.id);
+  ngOnInit() {
+    this.pet = this.pets.find(pet=>pet.id==this.id);
+    console.log(this.filtroRotaDinamica);
   }
 
   public pets: Pet[]=[

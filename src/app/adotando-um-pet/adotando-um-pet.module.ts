@@ -17,6 +17,6 @@ import { InstituicaoComponent } from '../instituicao/instituicao.component';
     IonicModule,
     AdotandoUmPetPageRoutingModule
   ],
-  declarations: [AdotandoUmPetPage]
+  declarations: [AdotandoUmPetPage, InstituicaoComponent]
 })
 export class AdotandoUmPetPageModule {}
