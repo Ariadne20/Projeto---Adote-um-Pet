@@ -23,6 +23,7 @@ interface Pet{
   EstadoInstituicao: String;
   DescricaoInstituicao:String;
   FotoInstituicao: String;
+  NumeroInstituição:String;
 }
 
 @Component({
@@ -63,6 +64,7 @@ export class InstituicaoComponent implements OnInit {
       EstadoInstituicao: 'SP',
       DescricaoInstituicao:'Desde de 2007 ajudando animas a econtrar lares amorosos.',
       FotoInstituicao:'https://cdn.abcdoabc.com.br/Clinica-Castracao-Sao-Fransisco-de-Assis_1b82f472.jpg',
+      NumeroInstituição:'+5511948092919',
     },
     {
       id: 2,
@@ -82,6 +84,7 @@ export class InstituicaoComponent implements OnInit {
       EstadoInstituicao: 'RJ',
       DescricaoInstituicao:'Ajudando animais em estado de vulnerabilidade a encontrar um lar',
       FotoInstituicao:'https://ogimg.infoglobo.com.br/in/22492408-5f5-27a/FT1086A/x75547960_SRPetrApolis-Rio-de-Janeiro08-03-2018DogAs-Heavenprojeto-social-que-cuida-de.jpg.pagespeed.ic.DoLq9bDaaN.jpg',
+      NumeroInstituição:'+5511948092919',
     },
     {
       id: 3,
@@ -101,6 +104,7 @@ export class InstituicaoComponent implements OnInit {
       EstadoInstituicao: 'PE',
       DescricaoInstituicao:'Atuamos desde de 2012 no combate de maus tratos aos animais',
       FotoInstituicao:'https://emais.estadao.com.br/blogs/comportamento-animal/wp-content/uploads/sites/205/2020/04/unnamed-2_170420204133.jpg',
+      NumeroInstituição:'+5511948092919',
     },
     {
       id: 42,
@@ -120,6 +124,7 @@ export class InstituicaoComponent implements OnInit {
       EstadoInstituicao: 'SP',
       DescricaoInstituicao:'Meu propósito de vida é ajudar animais a encontrar um lar amoroso.',
       FotoInstituicao:'https://dkt6rvnu67rqj.cloudfront.net/cdn/ff/sWcuxCfry5FhOzkPoB07SjkI0egy_5dk9pD0PnFQ7dA/1583442322/public/styles/600x400/public/media/1024768.jpg?h=aebfa19c&itok=6Vqv4dz-',
+      NumeroInstituição:'+5511948092919',
     }
   ]
 
