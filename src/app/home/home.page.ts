@@ -98,14 +98,14 @@ export class HomePage {
     {
       Nome: 'Mônica Pereira',
       Estado:'RJ',
-      Foto: 'https://images.pexels.com/photos/2774197/pexels-photo-2774197.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      Feedback: 'Estava me sentindo muito só, com Adote um Pet encontrei Amêndoa, a gatinha mais carinhosa que já vi',
+      Foto: 'https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      Feedback: '"Estava me sentindo muito só, com Adote um Pet encontrei Amêndoa, a gatinha mais carinhosa que já vi"',
     },
     {
       Nome:'Renan Paulo Souza',
       Estado:'MG',
       Foto: 'https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      Feedback: 'Me mudei de estado e queria um companheiro, pois, não conhecia ninguém aqui, descobri a Adote um Pet e escolhi Billy, meu melhor amigo',
+      Feedback: '"Me mudei de estado e queria um companheiro, pois, não conhecia ninguém aqui, descobri a Adote um Pet e escolhi Billy, meu melhor amigo"',
     }
   ]
   constructor() {}

@@ -8,7 +8,7 @@
 
 <ion-content class="ion-padding">
   <app-pets *ngFor="let pets of todosOsPets">
-    <<ion-text color="primary">
+    <ion-text color="primary">
       <h1>{{pet.Nome}}</h1>
     </ion-text>
   </app-pets>
@@ -50,7 +50,7 @@
   <p style="margin: 10pt; font-weight: bold;color: white;"><strong>Veja um dos nossos Pets disponíveis para adoção:</strong></p>
 
   <!--A ideia é mostrar apenas os dois primeiros elementos da lista-->
-  <ion-list style="padding: 0pt; margin:0pt; background-color: #4ca8f1;" *ngFor= "let pet of pets | slice: 0:1">
+  <ion-list style="padding: 0pt; margin:0pt;background-color: #4ca8f1;" *ngFor= "let pet of pets | slice: 0:1">
     <ion-card class="ion-activatable ripple-parent" style="border-width: 2pt; border-color: black;">
       <ion-card-header>
         <ion-card-subtitle>
@@ -65,8 +65,10 @@
           <ion-col size="9">  
             <ion-card-content>
               <ion-text>
+                <h2>
                 {{pet.Descricao}}
-              </ion-text>
+              </h2>
+            </ion-text>
             </ion-card-content>
           </ion-col>
         </ion-row>
@@ -79,24 +81,26 @@
   </ion-list>
 
     <h6 style="margin: 10pt; font-weight: bold; color: white; ">Veja os feedbacks de alguns dos nossos usuários:</h6>
-    
     <!--A ideia é mostrar apenas 1 feedback da lista-->
-    <ion-list style="padding: 0pt; margin:0pt; background-color: #4ca8f1;" *ngFor= "let feedback of feedbacks">
-      <ion-row class="feedback">
-        <ion-col size="4" class="verticalhorizontal">
-          <div>
-            <img src="{{feedback.Foto}}">
-          </div>
+    <ion-list style= "padding:0pt; margin:0pt;background-color:#4ca8f1;" *ngFor= "let feedback of feedbacks">
+      <ion-card class="feedback">
+      <ion-card-header>
+          <ion-card-subtitle class= "Adjust">
+            {{feedback.Nome}} - {{feedback.Estado}}
+        </ion-card-subtitle>
+        <ion-row class="ion-align-items-center">
+        <ion-col>
+           <img src="{{feedback.Foto}}" class= "page">
           </ion-col>
+           <ion-card-content>
         <ion-col style="align-items: center;vertical-align: middle;">
-          <ion-text style="font-size: 10pt;">
+          <ion-text style="font-size: 12pt;">
             {{feedback.Feedback}}
           </ion-text>
-          <div style="background-color: #4ca8f1; text-align: center;">
-            <p class= "Adjust">{{feedback.Nome}} - {{feedback.Estado}}</p>
-          </div>
-          <ion-text style="color: purple;">Isso é um teste!!!</ion-text>
-        </ion-col>
-      </ion-row>
+         </ion-col>
+      </ion-card-content>
+     </ion-row>
+      </ion-card-header>
+      </ion-card>
     </ion-list>
 </ion-content>
