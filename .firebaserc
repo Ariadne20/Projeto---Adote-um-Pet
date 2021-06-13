@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "projeto-teste-48dbf": {
+      "hosting": {
+        "app": [
+          "projeto-teste-48dbf"
+        ]
+      }
+    }
+  }
+}

@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'pets-favoritos',
     loadChildren: () => import('./pets-favoritos/pets-favoritos.module').then( m => m.PetsFavoritosPageModule)
   },
+  {
+    path: 'teste-geolocalizacao',
+    loadChildren: () => import('./teste-geolocalizacao/teste-geolocalizacao.module').then( m => m.TesteGeolocalizacaoPageModule)
+  },
 ];
 
 @NgModule({
