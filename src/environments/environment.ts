@@ -4,14 +4,14 @@
 
 export const environment = {
   production: false,
-   firebase:{
-    apiKey: "AIzaSyDSyB9RE8mozE2f3VXSMtjr280yxdGWarI",
-    authDomain: "adote-um-pet-f59eb.firebaseapp.com",
-    projectId: "adote-um-pet-f59eb",
-    storageBucket: "adote-um-pet-f59eb.appspot.com",
-    messagingSenderId: "484136286136",
-    appId: "1:484136286136:web:8bec0de1ff14427b30014d",
-    measurementId: "G-PYD2DJ7MGC"
+  firebase : {
+    apiKey: "AIzaSyCgDnWg_FvAkEzPPUCzoFc7QUZmD1Tv9aM",
+    authDomain: "trabalho-faculdade-2c1b8.firebaseapp.com",
+    projectId: "trabalho-faculdade-2c1b8",
+    storageBucket: "trabalho-faculdade-2c1b8.appspot.com",
+    messagingSenderId: "351238643149",
+    appId: "1:351238643149:web:5a86adc318a2f388c5f884",
+    measurementId: "G-46ZJS3GH4R"
   }
 };
 

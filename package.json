@@ -27,11 +27,15 @@
     "@ionic-native/location-accuracy": "^5.33.1",
     "@ionic/angular": "^5.5.2",
     "@ionic/storage-angular": "^3.0.6",
+<<<<<<< HEAD
     "@types/google-map-react": "^2.1.1",
     "cordova-plugin-android-permissions": "^1.1.2",
     "cordova-plugin-request-location-accuracy": "^2.3.0",
     "firebase": "^7.0 || ^8.0",
     "google-map-react": "^2.1.9",
+=======
+    "firebase": "^8.6.7",
+>>>>>>> 9c4786a93e211dbbb228998518b7f4ef6a6f51cd
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
@@ -39,7 +43,7 @@
   "devDependencies": {
     "@angular-devkit/architect": ">= 0.900 < 0.1300",
     "@angular-devkit/build-angular": "~0.1102.4",
-    "@angular/cli": "~11.2.4",
+    "@angular/cli": "11.2.14",
     "@angular/compiler": "~11.2.0",
     "@angular/compiler-cli": "~11.2.0",
     "@angular/language-service": "~11.2.0",
@@ -66,7 +70,14 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.0.2"
+    "typescript": "~4.0.2",
+    "@angular-devkit/architect": ">= 0.900 < 0.1300",
+    "firebase-tools": "^8.0.0 || ^9.0.0",
+    "fuzzy": "^0.1.3",
+    "inquirer": "^6.2.2",
+    "inquirer-autocomplete-prompt": "^1.0.1",
+    "open": "^7.0.3",
+    "jsonc-parser": "^3.0.0"
   },
   "description": "An Ionic project"
 }
