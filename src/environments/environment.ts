@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+<<<<<<< HEAD
     firebase: {
         apiKey: "AIzaSyB1GSgO1VpeKMGyTxV39fIToKoFOqNBW6g",
         authDomain: "projeto-teste-48dbf.firebaseapp.com",
@@ -14,6 +15,18 @@ export const environment = {
       }
     };
   
+=======
+   firebase:{
+    apiKey: "AIzaSyDSyB9RE8mozE2f3VXSMtjr280yxdGWarI",
+    authDomain: "adote-um-pet-f59eb.firebaseapp.com",
+    projectId: "adote-um-pet-f59eb",
+    storageBucket: "adote-um-pet-f59eb.appspot.com",
+    messagingSenderId: "484136286136",
+    appId: "1:484136286136:web:8bec0de1ff14427b30014d",
+    measurementId: "G-PYD2DJ7MGC"
+  }
+};
+>>>>>>> cf4157b989f391ef5c6448ee44a1eaebbbea9c90
 
 /*
  * For easier debugging in development mode, you can import the following file
