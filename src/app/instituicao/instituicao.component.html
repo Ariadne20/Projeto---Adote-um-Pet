@@ -21,24 +21,22 @@
   </ion-row>
   <p style="margin-top: 10pt;text-align: center;">Entre em contato com o responsável abaixo para adotar o Pet escolhido:</p>
   
-  <ion-row style="padding-bottom: 0pt;">
-    <ion-col size="6">
-      <img style="vertical-align: middle; image-resolution: 100%;" src="">
+  <ion-row style="padding-bottom: 0pt; padding-top: 0pt;">
+    <ion-col style="align-content: center; justify-content: center; justify-items: center; vertical-align: middle; padding: 0pt;" size="6">
+      <img style="vertical-align: middle; image-resolution: 100%;" src="{{pet.FotoInstituicao}}">
     </ion-col>
-    <ion-col size="6">
+    <ion-col size="6" style="margin-top: 0pt; padding-bottom:0pt;">
       <p style="background-color: #4ca8f1; text-align: center; font-weight: bold; margin-top: 0pt; padding-top: 0pt;vertical-align: middle;">
         Pet Helper
         <ion-icon name="heart"></ion-icon>
       </p>
-      <p style="padding-top: 10pt; padding-bottom: 10pt;"><strong>Nome:{{pet.Nome}}</strong></p>
-      <p style="padding-top: 0pt; padding-bottom: 10pt;"><strong>Estado:{{pet.Nome}}</strong></p>
-      <p style="padding-top: 0pt; padding-bottom: 10pt;"><strong>Descrição:{{pet.Nome}}</strong></p>
-    {{pet | json}}
-    
+      <p style="padding-top: 10pt; padding-bottom: 10pt;"><strong>Nome:</strong>{{pet.NomeInstituicao}}</p>
+      <p style="padding-top: 0pt; padding-bottom: 10pt;"><strong>Estado:</strong>{{pet.EstadoInstituicao}}</p> 
     </ion-col>
+    <p style="padding-top: 0pt; padding-bottom:0pt;"><strong>Descrição:</strong>{{pet.DescricaoInstituicao}}</p>  
   </ion-row>
-  <ion-button expand="block" shape="square" style="font-size: 12pt;">
-    <ion-icon name="logo-whatsapp" slot="start" ></ion-icon>
+  <ion-button expand="block" shape="square" style="font-size: 12pt;" [href]="'https://api.whatsapp.com/send?phone='+ pet.NumeroInstituicao">
+    <ion-icon  name="logo-whatsapp" slot="start" ></ion-icon>
     Entrar em contato!
   </ion-button>
 </ion-grid>
