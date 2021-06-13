@@ -9,23 +9,24 @@
       </ion-col>
     </ion-row>
 
-    <ion-grid style="background-color: #f9c214; padding-top: 15pt;" *ngFor="let pet of filtroRotaDinamica">
+    <ion-grid *ngIf="Pet" style="background-color: #f9c214; padding-top: 15pt;">
       <ion-row style="background-color: #4ca8f1; align-self: start; vertical-align: middle;align-items: center; align-content: center;border-color: black;">
         <ion-text style="color: white; text-indent: 10pt; font-weight: bold; font-size: 24pt;">
-          {{pet.Nome}} | {{pet.Genero}}
+          {{Pet.Nome}} | {{Pet.Genero}}
         </ion-text>
       </ion-row>
       <ion-row style="padding-top: 15pt; padding-bottom: 0pt;">
         <ion-col size="6">
-          <img style="vertical-align: middle; image-resolution: 100%;" src="{{pet.Foto}}">
+          <img style="vertical-align: middle; image-resolution: 100%;" src="{{Pet.Foto}}">
         </ion-col>
         <ion-col size="6">
-          <p><strong>Cor:</strong>{{pet.CorDoPelo}}</p>
-          <p><strong>Pelagem:</strong>{{pet.Pelagem}}</p>
-          <p><strong>Olhos:</strong>{{pet.CorDoPelo}}</p>
-          <p><strong>Idade aproximada:</strong>{{pet.Idade}}</p>
-          <p><strong>Estado:</strong>{{pet.Estado}}</p>
-          <p><strong>Cidade:</strong>{{pet.Cidade}}</p>
+          <p><strong>Cor:</strong>{{Pet.CorDoPelo}}</p>
+          <p><strong>Pelagem:</strong>{{Pet.Pelagem}}</p>
+          <p><strong>Olhos:</strong>{{Pet.CorDoPelo}}</p>
+          <p><strong>Idade aproximada:</strong>{{Pet.Idade}}</p>
+          <p><strong>Estado:</strong>{{Pet.Estado}}</p>
+          <p><strong>Cidade:</strong>{{Pet.Cidade}}</p>
+          <p><strong>Este pet está a:</strong><ion-text [color]="distance <= 7 ? 'success' : 'danger'">{{distance | number : '1.2-2' }}Km de você!</ion-text></p>
         </ion-col>
       </ion-row>
     
@@ -34,7 +35,7 @@
           Jujuba passou por muitas dificuldades e está em busca de um lar amoroso para recomeçar.
         </p>
       </ion-row>
-      <ion-button [routerLink]="['/adotando-um-pet', pet.id]" expand="block" shape="square" style="font-size: 12pt;">
+      <ion-button [routerLink]="['/adotando-um-pet', Pet.id]" expand="block" shape="square" style="font-size: 12pt;">
         <ion-icon slot="start" name="add-circle-outline"></ion-icon>
         Quero Adotar!
       </ion-button>

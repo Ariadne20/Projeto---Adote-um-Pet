@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Storage } from '@ionic/storage-angular'
+import { Geolocation } from '@capacitor/geolocation';
+
 
 type TipoPet = 'Gato'|'Cachorro'| '' | 'Tudo';
 type Genero = 'Fêmea' | 'Macho';
@@ -23,6 +25,8 @@ interface Pet{
   EstadoInstituicao: String;
   DescricaoInstituicao:String;
   FotoInstituicao: String;
+  petLatitude: number;
+  petLongitude: number;
 }
 
 @Component({
@@ -34,7 +38,13 @@ export class PetsComponent implements OnInit {
 
   @Input() public id:number;
 
-  public filtroRotaDinamica: Pet[];
+  public Pet: Pet;
+
+  lat1: number;
+  lon1: number;
+  lat2 = 0;
+  lon2 = 0;
+  distance: number;
    
   constructor(private storage:Storage) {
 
@@ -42,8 +52,13 @@ export class PetsComponent implements OnInit {
   
   async ngOnInit() {
     await this.storage.create();
-    this.filtroRotaDinamica = this.pets.filter(pet=>pet.id==this.id);
+    this.Pet = this.pets.find(pet=>pet.id==this.id);
+    this.lat2 = this.Pet.petLatitude;
+    this.lon2 = this.Pet.petLongitude;
+    this.calcCrow();
   }
+
+ 
 
   public pets: Pet[]=[
     {
@@ -64,6 +79,8 @@ export class PetsComponent implements OnInit {
       EstadoInstituicao: 'SP',
       DescricaoInstituicao:'Desde de 2007 ajudando animas a econtrar lares amorosos.',
       FotoInstituicao:'https://cdn.abcdoabc.com.br/Clinica-Castracao-Sao-Fransisco-de-Assis_1b82f472.jpg',
+      petLatitude: -23.6734204,
+      petLongitude: -46.5322179,
     },
     {
       id: 2,
@@ -83,6 +100,8 @@ export class PetsComponent implements OnInit {
       EstadoInstituicao: 'RJ',
       DescricaoInstituicao:'Ajudando animais em estado de vulnerabilidade a encontrar um lar',
       FotoInstituicao:'https://ogimg.infoglobo.com.br/in/22492408-5f5-27a/FT1086A/x75547960_SRPetrApolis-Rio-de-Janeiro08-03-2018DogAs-Heavenprojeto-social-que-cuida-de.jpg.pagespeed.ic.DoLq9bDaaN.jpg',
+      petLatitude: -20.3135958,
+      petLongitude: -40.2893737,
     },
     {
       id: 3,
@@ -102,6 +121,8 @@ export class PetsComponent implements OnInit {
       EstadoInstituicao: 'PE',
       DescricaoInstituicao:'Atuamos desde de 2012 no combate de maus tratos aos animais',
       FotoInstituicao:'https://emais.estadao.com.br/blogs/comportamento-animal/wp-content/uploads/sites/205/2020/04/unnamed-2_170420204133.jpg',
+      petLatitude: -20.3135958,
+      petLongitude: -40.2893737,
     },
     {
       id: 42,
@@ -121,6 +142,8 @@ export class PetsComponent implements OnInit {
       EstadoInstituicao: 'SP',
       DescricaoInstituicao:'Meu propósito de vida é ajudar animais a encontrar um lar amoroso.',
       FotoInstituicao:'https://dkt6rvnu67rqj.cloudfront.net/cdn/ff/sWcuxCfry5FhOzkPoB07SjkI0egy_5dk9pD0PnFQ7dA/1583442322/public/styles/600x400/public/media/1024768.jpg?h=aebfa19c&itok=6Vqv4dz-',
+      petLatitude: -20.3135958,
+      petLongitude: -40.2893737,
     }
   ]
 
@@ -139,4 +162,36 @@ export class PetsComponent implements OnInit {
       this.petFiltrados=this.listaGatos;
     }
   }
+
+  public async calcCrow() 
+  {
+    const position = await Geolocation.getCurrentPosition();
+    this.lat1 = position.coords.latitude;
+    this.lon1 = position.coords.longitude;
+    
+
+    let lat1 = this.lat1;
+    let lon1 = this.lon1;
+    let lat2 = this.lat2;
+    let lon2 = this.lon2;
+    let R = 6371; // km
+    let dLat = this.toRad(lat2-lat1);
+    let dLon = this.toRad(lon2-lon1);
+    lat1 = this.toRad(lat1);
+    lat2 = this.toRad(lat2);
+
+    let a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+      Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
+    let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+    let d = R * c;
+    this.distance = d;
+  }
+
+  // Converts numeric degrees to radians
+  public toRad(Value) 
+  {
+      return Value * Math.PI / 180;
+  }
+
+
 }
