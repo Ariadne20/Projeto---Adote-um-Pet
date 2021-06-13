@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 type TipoPet = 'Gato'|'Cachorro';
 type Genero = 'Fêmea' | 'Macho';
 
 interface Feedback{
+  Id: number;
   Nome: string;
   Estado: String
   Foto:String;
@@ -93,21 +94,29 @@ export class HomePage {
       Descricao:'Romeu é um doguinho super carinhoso e bonzinho, ama caminhar e brincar.',
     },
   ]
-
-  public feedbacks:Feedback[]=[
+  @ViewChild('mySlider') mySlider: any;
+   public feedbacks:Feedback[]=[
     {
+      Id: 1,
       Nome: 'Mônica Pereira',
       Estado:'RJ',
       Foto: 'https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      Feedback: '"Estava me sentindo muito só, com Adote um Pet encontrei Amêndoa, a gatinha mais carinhosa que já vi"',
+      Feedback: '"Estava me sentindo muito só, foi então com a Adote um Pet que encontrei Amêndoa, a gatinha mais carinhosa que já vi"',
     },
     {
+      Id: 2,
       Nome:'Renan Paulo Souza',
       Estado:'MG',
       Foto: 'https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       Feedback: '"Me mudei de estado e queria um companheiro, pois, não conhecia ninguém aqui, descobri a Adote um Pet e escolhi Billy, meu melhor amigo"',
     }
   ]
-  constructor() {}
 
+  constructor() {}
+  slideNext(){
+    this.mySlider.slideNext();
+  }
+  slidePrev(){
+    this.mySlider.slidePrev();
+  }
 }

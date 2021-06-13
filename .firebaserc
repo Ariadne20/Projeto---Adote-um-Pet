@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "adote-um-pet-f59eb": {
+      "hosting": {
+        "app": [
+          "adote-um-pet-f59eb"
+        ]
+      }
+    }
+  }
+}

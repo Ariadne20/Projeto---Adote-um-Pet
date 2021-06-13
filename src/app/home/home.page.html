@@ -6,15 +6,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-<<<<<<< HEAD
-  <app-pets *ngFor="let pets of todosOsPets">
+<ion-content class="ion-padding" [fullscreen]="true">
+  <app-pets>
     <ion-text color="primary">
-      <h1>{{pet.Nome}}</h1>
+      <h1>{{pets.Nome}}</h1>
     </ion-text>
   </app-pets>
-=======
->>>>>>> 00649f5946b82e11180e40501851cab4fbdabc12
   
     <ion-row style="background-color: #f9c214;">
         <ion-col  size="4.8" class="ion-align-self-center">
@@ -85,25 +82,29 @@
 
     <h6 style="margin: 10pt; font-weight: bold; color: white; ">Veja os feedbacks de alguns dos nossos usuários:</h6>
     <!--A ideia é mostrar apenas 1 feedback da lista-->
-    <ion-list style= "padding:0pt; margin:0pt;background-color:#4ca8f1;" *ngFor= "let feedback of feedbacks">
+    <ion-slides [scrollbar]=true
+                paginationClickable=true
+                initialSlide=0
+                loop=true
+                autoplay=1000
+                speed=2000
+                #mySlider>
+      <ion-slide *ngFor= "let feedback of feedbacks" >
       <ion-card class="feedback">
       <ion-card-header>
           <ion-card-subtitle class= "Adjust">
             {{feedback.Nome}} - {{feedback.Estado}}
         </ion-card-subtitle>
-        <ion-row class="ion-align-items-center">
-        <ion-col>
-           <img src="{{feedback.Foto}}" class= "page">
-          </ion-col>
+        <div class="swiper-button-next"(click)="slideNext()"></div>
+        <div class="swiper-button-prev"(click)="slidePrev()"></div>
+          <img src="{{feedback.Foto}}" class= "photo" >
            <ion-card-content>
-        <ion-col style="align-items: center;vertical-align: middle;">
-          <ion-text style="font-size: 12pt;">
-            {{feedback.Feedback}}
+          <ion-text style="padding:0%;font-weight: bold;">
+            <i>{{feedback.Feedback}}</i>
           </ion-text>
-         </ion-col>
-      </ion-card-content>
-     </ion-row>
+        </ion-card-content>
       </ion-card-header>
       </ion-card>
-    </ion-list>
+  </ion-slide>
+  </ion-slides>
 </ion-content>

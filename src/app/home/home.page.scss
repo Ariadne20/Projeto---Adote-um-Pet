@@ -84,13 +84,14 @@ h1{
 .Adjust{
   text-align: center;
   color: white;
-  font-size: 10pt; 
+  font-size: 12pt; 
   font-weight: bold;
   background-color:#4ca8f1;
+  margin: 5pt;
 }
 
 .feedback{
-  margin: 5px;
+  margin: 10pt;
   background-color: rgb(243, 242, 242); 
   border-style: dashed;
   border-width: 2pt;
@@ -99,7 +100,7 @@ h1{
 
 .feedback-col{
   text-align: justify;
-  vertical-align: large;
+  vertical-align: middle;
 }
 
 
@@ -147,4 +148,8 @@ ion-content{
   }
   h2{
    font-size: 100;
+  }
+  .photo{
+    vertical-align: middle;
+    border-radius: 10;
   }
