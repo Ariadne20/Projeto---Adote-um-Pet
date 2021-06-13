@@ -63,8 +63,8 @@
               </ion-button>
             </ion-col>
             <ion-col size="6">
-              <ion-button fill="clear">
-                <ion-icon slot="end" name="add"></ion-icon>
+              <ion-button  fill="clear" (click)="UpdateStatus(pet.id)">
+                <ion-icon color= "danger" size="medium" slot="icon-only" [name]="pet.Favorito?'heart':'heart-outline'"></ion-icon>
               </ion-button>
             </ion-col>
           </ion-row>
