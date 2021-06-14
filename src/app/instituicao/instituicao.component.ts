@@ -1,6 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Storage } from '@ionic/storage-angular'
+import { AlertController, IonButtons} from '@ionic/angular'
+import { Button } from 'protractor';
+
 
 type TipoPet = 'Gato'|'Cachorro'| '' | 'Tudo';
 type Genero = 'Fêmea' | 'Macho';
@@ -31,18 +34,36 @@ interface Pet{
   templateUrl: './instituicao.component.html',
   styleUrls: ['./instituicao.component.scss'],
 })
+
+
 export class InstituicaoComponent implements OnInit {
   @Input() public id:number;
   public filtroRotaDinamica: Pet[];
   public pet:Pet;
    
-  constructor(private storage:Storage) {
+ 
+  constructor(public AlertController : AlertController) {}
+  
 
+     async abrirAlert(){
+     
+        const alert = await this.AlertController.create({
+          cssClass: 'my-custom-class',
+          header: 'ATENÇÃO!',
+          subHeader: 'Importante',
+          message: 'Abandonar, soltar, deixar fugir, não alimentar, acorrentar, bater, amedrontar e deixar acasalar indiscriminadamente são formas de maus tratos com pena prevista na lei. O Adote um Pet atuará conforme artigo 164 do Código Penal, artigo 32 da Lei Federal 9.605, de 12 de fevereiro de 1998 (Lei de Crimes Ambientais), e da Lei Municipal 13.131, de 18 de maio de 2001 (Lei de Posse Responsável), contra qualquer um que descumpra as determinações previstas, sejam estes adotantes ou não..',
+          buttons: ['OK']
+
+        }). then(a=> a.present());
+    
+    
   }
   
   ngOnInit() {
     this.pet = this.pets.find(pet=>pet.id==this.id);
     console.log(this.filtroRotaDinamica);
+
+    
   }
 
   public pets: Pet[]=[
@@ -145,3 +166,7 @@ export class InstituicaoComponent implements OnInit {
   }
 }
 
+
+
+
+  
