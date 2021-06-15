@@ -83,7 +83,7 @@ export class InstituicaoComponent implements OnInit {
       Descricao:'Romeu é um doguinho super carinhoso e bonzinho, ama caminhar e brincar.',
       NomeInstituicao: 'Mauro Alberto',
       EstadoInstituicao: 'SP',
-      DescricaoInstituicao:'Desde de 2007 ajudando animas a econtrar lares amorosos.',
+      DescricaoInstituicao:'Desde de 2007 ajudando animais a econtrar lares amorosos.',
       FotoInstituicao:'https://cdn.abcdoabc.com.br/Clinica-Castracao-Sao-Fransisco-de-Assis_1b82f472.jpg',
       NumeroInstituicao:'+5511948092919',
     },
