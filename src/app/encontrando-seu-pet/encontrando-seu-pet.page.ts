@@ -40,7 +40,7 @@ export class EncontrandoSeuPetPage implements OnInit {
 
        this.listaGatos = this.pets.filter(pet=> pet.Tipo=='Gato');
        this.listaCachorros = this.pets.filter(pet=> pet.Tipo=='Cachorro');
-      this. petsFavorito = this.pets.filter(pet=> pet.Favorito==true);
+       this. petsFavorito = this.pets.filter(pet=> pet.Favorito==true);
 
 
       this.FiltroPet();
