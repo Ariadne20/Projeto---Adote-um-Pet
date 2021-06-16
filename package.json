@@ -29,7 +29,6 @@
     "@types/google-map-react": "^2.1.1",
     "cordova-plugin-android-permissions": "^1.1.2",
     "cordova-plugin-request-location-accuracy": "^2.3.0",
-    "google-map-react": "^2.1.9",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

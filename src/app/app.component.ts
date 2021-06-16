@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent implements OnInit{
-  constructor(public storage:Storage) {
+export class AppComponent implements OnInit {
+  constructor(public storage: Storage) {
   }
 
-  async ngOnInit(){
+  async ngOnInit() {
     await this.storage.create();
   }
 }
