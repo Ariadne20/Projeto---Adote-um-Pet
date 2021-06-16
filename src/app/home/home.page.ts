@@ -76,7 +76,7 @@ export class HomePage {
       Cidade:'Pirituba',
       Vacinado:true,
       Foto:'https://images.pexels.com/photos/3427343/pexels-photo-3427343.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      Descricao:'Romeu é um doguinho super carinhoso e bonzinho, ama caminhar e brincar.',
+      Descricao:'A Ana Clara ama dar um volta pela rua, brincar bastante com seus brinquedos e ficar do ladinho de quem ama.',
     },
 
     {
@@ -91,7 +91,7 @@ export class HomePage {
       Cidade:'Ouro Preto',
       Vacinado:false,
       Foto:'https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-      Descricao:'Romeu é um doguinho super carinhoso e bonzinho, ama caminhar e brincar.',
+      Descricao:'Didi é um gatinho mega esperto, adora seu cantinho de aconchego e uma boa companhia.',
     },
   ]
   @ViewChild('mySlider') mySlider: any;
