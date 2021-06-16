@@ -35,6 +35,7 @@ const routes: Routes = [
     path: 'teste-geolocalizacao',
     loadChildren: () => import('./teste-geolocalizacao/teste-geolocalizacao.module').then( m => m.TesteGeolocalizacaoPageModule)
   },
+ 
 ];
 
 @NgModule({
