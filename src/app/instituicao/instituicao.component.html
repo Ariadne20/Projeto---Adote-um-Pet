@@ -1,6 +1,5 @@
-
-<ion-row style="background-color: #f9c214; margin-bottom: 10pt;" >
-  <ion-col  size="4.8" class="ion-align-self-center">
+<ion-row style="background-color: #f9c214; margin-bottom: 10pt;">
+  <ion-col size="4.8" class="ion-align-self-center">
     <h1 style="font-weight: bold;text-align: center;">ADOTE UM</h1>
     <h1 style="color: #4ca8f1; font-weight: bold; text-align: center;">PET</h1>
   </ion-col>
@@ -10,7 +9,8 @@
 </ion-row>
 
 <ion-grid style="background-color: #f9c214; padding-top: 10pt;">
-  <ion-row style="background-color:#4ca8f1; align-self: start; vertical-align: middle;align-items: center; align-content: center;border-color: rgb(27, 214, 247); justify-content: center;">
+  <ion-row
+    style="background-color:#4ca8f1; align-self: start; vertical-align: middle;align-items: center; align-content: center;border-color: rgb(27, 214, 247); justify-content: center;">
     <ion-text style="color: rgb(19, 140, 177); font-weight: bold; font-size: 16pt;">
   
       <button class= btn btn-red (click) = "abrirAlert()"> CLIQUE PARA VERIFICAR INFORMAÇÕES</button>
@@ -20,32 +20,36 @@
      
     </ion-text>
   </ion-row>
-  
-  <ion-row style="background-color:white; align-self: start; vertical-align: middle;align-items: center; align-content: center;border-color: black; justify-content: center;">
+
+  <ion-row
+    style="background-color:white; align-self: start; vertical-align: middle;align-items: center; align-content: center;border-color: black; justify-content: center;">
     <ion-text style="color: black; font-weight: bold; font-size: 10pt; margin: 4pt; text-align: center;">
-      
+
     </ion-text>
   </ion-row>
-  <p style="margin-top: 10pt;text-align: center;">Entre em contato com o responsável abaixo para adotar o Pet escolhido:</p>
-  
+  <p style="margin-top: 10pt;text-align: center;">Entre em contato com o responsável abaixo para adotar o Pet escolhido:
+  </p>
+
   <ion-row style="padding-bottom: 0pt; padding-top: 0pt;">
-    <ion-col style="align-content: center; justify-content: center; justify-items: center; vertical-align: middle; padding: 0pt;" size="6">
+    <ion-col
+      style="align-content: center; justify-content: center; justify-items: center; vertical-align: middle; padding: 0pt;"
+      size="6">
       <img style="vertical-align: middle; image-resolution: 100%;" src="{{pet.FotoInstituicao}}">
     </ion-col>
     <ion-col size="6" style="margin-top: 0pt; padding-bottom:0pt;">
-      <p style="background-color: #4ca8f1; text-align: center; font-weight: bold; margin-top: 0pt; padding-top: 0pt;vertical-align: middle;">
+      <p
+        style="background-color: #4ca8f1; text-align: center; font-weight: bold; margin-top: 0pt; padding-top: 0pt;vertical-align: middle;">
         Pet Helper
         <ion-icon name="heart"></ion-icon>
       </p>
       <p style="padding-top: 10pt; padding-bottom: 10pt;"><strong>Nome:</strong>{{pet.NomeInstituicao}}</p>
-      <p style="padding-top: 0pt; padding-bottom: 10pt;"><strong>Estado:</strong>{{pet.EstadoInstituicao}}</p> 
+      <p style="padding-top: 0pt; padding-bottom: 10pt;"><strong>Estado:</strong>{{pet.EstadoInstituicao}}</p>
     </ion-col>
-    <p style="padding-top: 0pt; padding-bottom:0pt;"><strong>Descrição:</strong>{{pet.DescricaoInstituicao}}</p>  
+    <p style="padding-top: 0pt; padding-bottom:0pt;"><strong>Descrição:</strong>{{pet.DescricaoInstituicao}}</p>
   </ion-row>
-  <ion-button expand="block" shape="square" style="font-size: 12pt;" [href]="'https://api.whatsapp.com/send?phone='+ pet.NumeroInstituicao">
-    <ion-icon  name="logo-whatsapp" slot="start" ></ion-icon>
+  <ion-button expand="block" shape="square" style="font-size: 12pt;"
+    [href]="'https://api.whatsapp.com/send?phone='+ pet.NumeroInstituicao">
+    <ion-icon name="logo-whatsapp" slot="start"></ion-icon>
     Entrar em contato!
   </ion-button>
 </ion-grid>
-
-

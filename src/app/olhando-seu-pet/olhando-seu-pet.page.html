@@ -20,4 +20,43 @@
 
 <ion-content class="ion-padding">
   <app-pets [id]="id"></app-pets>
+  <ion-card>
+
+    <img src="https://www.encontramaua.com.br/sobre/wp-content/uploads/mapa-maua.png">
+    <ion-fab right top>
+      <button ion-fab>
+        <ion-icon name="pin"></ion-icon>
+      </button>
+    </ion-fab>
+  
+    <ion-item>
+      <ion-col>
+      <ion-icon name="paw-outline"></ion-icon>
+      <ion-text class="config">Veja onde Romeu está:</ion-text>
+    </ion-col>
+  <ion-col>
+      <p class="location">  Mauá,SP</p>
+    </ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-text>18 min</ion-text>
+      <ion-text>(2.6 mi)</ion-text>
+      <button ion-button icon-start clear item-end>
+        <ion-icon name="navigate"></ion-icon>
+        Start
+      </button>
+    </ion-item>
+  </ion-card>
+  <p>Está é uma localização aproximada</p>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="center">
+      <ion-fab-button><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="end">
+      <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>
